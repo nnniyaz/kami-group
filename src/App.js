@@ -18,6 +18,7 @@ function App() {
   const [totalPages, setTotalPages] = useState(0);
   const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(1);
+  const [totalNumberOfProducts, setTotalNumberOfProducts] = useState(0);
   const sortedAndSearchedProducts = useProducts(products, filter);
   const pagesArray = getPagesArray(totalPages);
 
@@ -25,6 +26,7 @@ function App() {
     const list = await ProductService.getAll(limit, page);
     setProducts(list.products);
     const totalCount = list.total;
+    setTotalNumberOfProducts(list.total);
     setTotalPages(getPageCount(totalCount, limit));
   })
 
@@ -85,7 +87,7 @@ function App() {
                 </div>
                 :
                 <div className='content'>
-                  <ProductList products={sortedAndSearchedProducts} deleteProduct={deleteProduct} />
+                  <ProductList products={sortedAndSearchedProducts} deleteProduct={deleteProduct} totalNumber={totalNumberOfProducts} />
                   <div className='page__wrapper'>
                     <div className='pages'>
                       <span onClick={goPreviousPage} className='page'>

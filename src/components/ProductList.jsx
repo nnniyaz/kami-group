@@ -1,11 +1,11 @@
 import Product from "./Product";
 import { Link } from 'react-router-dom';
 
-const TrackList = ({ products, deleteProduct }) => {
+const TrackList = ({ products, deleteProduct, totalNumber }) => {
     return (
         <div className="products">
             <div className="title">
-                Товары <span className="amount">• {products.length}</span>
+                Товары <span className="amount">• {totalNumber}</span>
             </div>
             <div className="inner-products">
                 <table>
