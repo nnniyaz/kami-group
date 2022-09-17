@@ -30,7 +30,7 @@ const Product = ({ data, deleteProduct }) => {
     return (
         <tr className='row'>
             <td className="product-block" onClick={handleClick}>
-                <img className="product-image" src={'http://localhost:5000/' + data.images[0]} alt="product" />
+                <img className="product-image" src={'https://kami-group.herokuapp.com/' + data.images[0]} alt="product" />
             </td>
             <td onClick={handleClick}>
                 {data.name}
