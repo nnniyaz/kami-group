@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'http://localhost:5000/api';
+const URL = 'https://kami-group.herokuapp.com/api';
 
 export default class ProductService {
     static async getCities() {
